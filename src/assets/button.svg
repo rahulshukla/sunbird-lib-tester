@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="73px" viewBox="0 0 97 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 62 (101010) - https://sketch.com -->
+    <title>33F9974A-FECC-4CCC-86DF-912AD5F46097</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="54" height="30" rx="15"></rect>
+        <filter x="-96.3%" y="-166.7%" width="292.6%" height="446.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="17" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.00653455457   0 0 0 0 0.00956069154   0 0 0 0 0.34021173  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-65.7%" y="-111.7%" width="231.5%" height="336.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="1" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="-1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="devs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mcq1" transform="translate(-543.000000, 0.000000)">
+            <g id="button" transform="translate(572.000000, 4.000000)">
+                <g id="Group-9">
+                    <g id="Group">
+                        <g id="Group-Copy">
+                            <rect id="Rectangle-5-Copy" fill="#000000" fill-rule="nonzero" opacity="0.277529762" x="0" y="0" width="60" height="36" rx="18"></rect>
+                            <g id="Group-2" transform="translate(3.000000, 3.000000)">
+                                <g id="Rectangle-5-Copy-2" fill-rule="nonzero">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                                    <rect stroke-opacity="0.484156469" stroke="#C3C8DB" stroke-width="2" stroke-linejoin="square" x="1" y="1" width="52" height="28" rx="14"></rect>
+                                </g>
+                                <polygon id="Shape" fill="#6340E8" transform="translate(27.295000, 15.000000) scale(-1, 1) translate(-27.295000, -15.000000) " points="31 10.41 29.59 9 23.59 15 29.59 21 31 19.59 26.42 15"></polygon>
+                            </g>
+                        </g>
+                        <g id="ic_chevron_left" transform="translate(30.000000, 18.000000) scale(-1, 1) translate(-30.000000, -18.000000) translate(26.000000, 12.000000)">
+                            <g id="Icon-24px"></g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

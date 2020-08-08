@@ -1,0 +1,8 @@
+<div>
+	<sb-navigation-ctrl [navConfig] = "navigationConfig" (sendControls)="navigationHandler($event)" ></sb-navigation-ctrl>
+
+	<sb-pdf-viewer [pdfConfig]="pdfPlayerConfig" (sendMetadata)="pdfEventHandler($event)"></sb-pdf-viewer>
+	
+  </div>
+  
+  
