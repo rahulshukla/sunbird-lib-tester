@@ -1,72 +1,57 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
-// import { questionSet , questionSetSa } from './data';
-import { newQuestionFormatMcq } from './data';
+import { navigationConfig , pdfPlayerConfig , startPageDetails, endPageConfig, contentDetails, pdfEndData } from './data';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  // styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'pdfDemo';
   pdfMetadataEvents: object;
+  navigationConfig = navigationConfig;
+  pdfPlayerConfig = pdfPlayerConfig;
+  startPageDetails = startPageDetails;
+  endPageConfig = endPageConfig;
+  contentDetails = contentDetails;
+  pdfEndData = pdfEndData;
+  navigate = {};
+  showStartPage = true;
+  showEndpage = false;
+  showPdf = false;
+
   constructor() { }
 
-  navigationConfig = {
-    'isNavCtrl': true,
-    'alignment': 'middle',
-    'isLeftEnable': true,
-    'isRightEnable': true,
-    'isFirstPage': true,
-    'isLastPage': false,
-    'leftIcon': '',
-    'rightIcon': '',
-    'leftIconUrl': 'assets/previous.png',
-    'rightIconUrl': 'assets/next.png',
-    'iconSize': 'fa-3x'
-};
+  ngOnInit() {}
 
-  pdfPlayerConfig = {
-    'src': '/assets/sample.pdf',
-    'showOpenFileButton': false,
-    'showPropertiesButton': false,
-    'textLayer': true,
-    'showHandToolButton': false,
-    'useBrowserLocale': true,
-    'showBookmarkButton': false,
-    'showBorders': true,
-    'startFromPage': Number(localStorage.getItem('lastPageVisited')) || 0,
-    'contextMenuAllowed': true,
-    'showSidebarButton': false,
-    'showFindButton': true,
-    'showPagingButtons': true,
-    'showZoomButtons': true,
-    'showPresentationModeButton': false,
-    'showPrintButton': true,
-    'showDownloadButton': true,
-    'showSecondaryToolbarButton': false,
-    'showRotateButton': false,
-    'showScrollingButton': false,
-    'showSpreadButton': false,
-    'backgroundColor': '#00000'
-};
-
-  ngOnInit() {
-
+  private startPageEventHandler(valueEmitted: any) {
+    console.log(valueEmitted);
   }
 
-  pdfEventHandler(valueEmitted) {
+  private pdfEventHandler(valueEmitted: object) {
       console.log(valueEmitted);
       this.pdfMetadataEvents = valueEmitted;
-      localStorage.setItem('lastPageVisited', this.pdfMetadataEvents['metaData']['currentPagePointer']);
   }
 
+  public EndPageEventHandler(valueEmitted) {
+    console.log('Telemetry Events:', valueEmitted);
+  }
 
-  public navigationHandler(event: any) {
-    if ( (window as any).PDFViewerApplication) {
-      event === 'next' ?
-      (window as any).PDFViewerApplication.eventBus.dispatch('nextpage') :
-      (window as any).PDFViewerApplication.eventBus.dispatch('previouspage');
-    }
+  private navigationHandler(event: any) {
+    if (this.showStartPage === true && event === 'next') {
+      this.showStartPage = false;
+      this.showPdf = true;
+      this.navigationConfig.isLeftEnable = true;
+    } else if (this.showStartPage === false &&
+      (this.pdfMetadataEvents['metaData']['currentPagePointer'] !== this.pdfMetadataEvents['metaData']['totalNumberOfPages']) ) {
+      this.navigate = {
+        'navigate': event,
+        'pageNumber': this.pdfMetadataEvents['metaData']['currentPagePointer']
+      };
+    }  else {
+        this.showEndpage = true;
+        this.showPdf = false;
+        this.navigationConfig.isNavCtrl = false;
+      }
   }
 }

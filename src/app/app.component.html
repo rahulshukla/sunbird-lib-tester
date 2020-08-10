@@ -1,8 +1,8 @@
-<div>
-	<sb-navigation-ctrl [navConfig] = "navigationConfig" (sendControls)="navigationHandler($event)" ></sb-navigation-ctrl>
 
-	<sb-pdf-viewer [pdfConfig]="pdfPlayerConfig" (sendMetadata)="pdfEventHandler($event)"></sb-pdf-viewer>
-	
-  </div>
-  
-  
+<sb-start-page *ngIf = "showStartPage" [startPageData]="startPageDetails" (startEvents)="startPageEventHandler($event)"></sb-start-page>
+
+<sb-navigation-ctrl [navConfig] = "navigationConfig" (sendControls)="navigationHandler($event)" ></sb-navigation-ctrl>
+
+<sb-pdf-viewer *ngIf = "showPdf" [pdfConfig]="pdfPlayerConfig" [navigation] = "navigate" (sendMetadata)="pdfEventHandler($event)"></sb-pdf-viewer>
+
+<sb-lib-endpage *ngIf = "showEndpage" [endPageConfig]="endPageConfig" [contentDetails]="contentDetails" [pdfEndData]="pdfEndData" (sendMetadata)="EndPageEventHandler($event)"></sb-lib-endpage>

@@ -32,13 +32,22 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/pdf-player-v2/node_modules/ngx-extended-pdf-viewer/assets/",
+                "input": "node_modules/pdf-player-v2/lib/assets/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/endpage-v2/lib/assets/",
                 "output": "/assets/"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input" : "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              }
             ],
+            
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js"
             ]
