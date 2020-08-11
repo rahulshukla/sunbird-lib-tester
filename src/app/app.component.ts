@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { navigationConfig , pdfPlayerConfig , startPageDetails, endPageConfig, contentDetails, pdfEndData } from './data';
 
 @Component({
@@ -26,14 +26,17 @@ export class AppComponent implements OnInit {
 
   private startPageEventHandler(valueEmitted: any) {
     console.log(valueEmitted);
+    this.pdfEndData = valueEmitted;
   }
 
   private pdfEventHandler(valueEmitted: object) {
       console.log(valueEmitted);
       this.pdfMetadataEvents = valueEmitted;
+      this.pdfEndData = valueEmitted;
   }
 
   public EndPageEventHandler(valueEmitted) {
+    this.pdfEndData = valueEmitted;
     console.log('Telemetry Events:', valueEmitted);
   }
 
@@ -53,5 +56,18 @@ export class AppComponent implements OnInit {
         this.showPdf = false;
         this.navigationConfig.isNavCtrl = false;
       }
+  }
+
+  private replayHandler(valueEmitted: any) {
+    console.log(valueEmitted);
+    if (valueEmitted === 'replay') {
+      this.pdfMetadataEvents['metaData']['currentPagePointer'] = 1;
+      this.showEndpage = false;
+      this.showStartPage = true;
+      this.showPdf = false;
+      this.navigationConfig.isNavCtrl = true;
+    } else if (valueEmitted === 'exit') {
+        alert('you pressed exit');
+    }
   }
 }

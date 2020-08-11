@@ -65,62 +65,21 @@ export const endPageConfig = {
   'showUser': true
 };
 
+
+
 export const contentDetails = {
-  'message': 'You Just Completed',
-  'timeLabel': 'TIME',
-  'content-info' : 'B301,B302_STD_1_TAMIL,ENGLISH_LANG_TERM 1_OPT',
-  'clockIcon': '/assets/clock.png',
-  'author': 'Universal Learning Aid (Let"s tute)',
-  'replayIcon': 'assets/replay.png',
-  'exitIcon': 'assets/exit.png',
+  message: 'You Just Completed',
+  timeLabel: 'TIME',
+  contentInfo: 'Thermodynamics',
+  clockIcon: 'assets/clock.svg',
+  author: 'Universal Learning Aid (Let"s learn)',
+  authorLabel: 'author',
+  replayIcon: 'assets/icn_replay.png',
+  replayLabel: 'replay',
+  exitIcon: 'assets/home.png',
+  exitLabel: 'exit',
+  user: 'anonymous'
 };
 
-export const pdfEndData = {
-  'eventType': 'END',
-  'metaData': {
-    'eid': 'END',
-    'numberOfPagesVisited': 9,
-    'totalNumberOfPages': 10,
-    'currentPagePointer': 10,
-    'pageDuration': [
-      {
-        'page': 2,
-        'spentTime': 3663
-      },
-      {
-        'page': 3,
-        'spentTime': 111
-      },
-      {
-        'page': 4,
-        'spentTime': 7534
-      },
-      {
-        'page': 5,
-        'spentTime': 573
-      },
-      {
-        'page': 6,
-        'spentTime': 255
-      },
-      {
-        'page': 7,
-        'spentTime': 475
-      },
-      {
-        'page': 8,
-        'spentTime': 362
-      },
-      {
-        'page': 9,
-        'spentTime': 353
-      },
-      {
-        'page': 10,
-        'spentTime': 301
-      }
-    ],
-    'sessionId': '',
-    'userPlayBehavior': []
-  }
-};
+export const pdfEndData = {};
+
