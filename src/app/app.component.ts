@@ -39,10 +39,8 @@ export class AppComponent implements OnInit {
     this.presentIndex = 1;
     const currentPlayerConfig = (this.getObject(this.playerLifeCycle, 'index', this.presentIndex));
     this.currentConfig = currentPlayerConfig.config;
-    this.presentIndex = this.presentIndex + 1;
     console.log('CurrentIndex:', this.presentIndex);
     console.log('CurrentConfig:', this.currentConfig);
-   
     this.updateLibEnabler(currentPlayerConfig.id);
   }
 
@@ -81,16 +79,16 @@ export class AppComponent implements OnInit {
     //   }
     if (this.presentIndex <= this.playerLifeCycle ['totalIndex'] && this.presentIndex !== 0) {
     if (event === 'next') {
+          this.presentIndex = this.presentIndex + 1;
           const currentPlayerConfig = (this.getObject(this.playerLifeCycle, 'index', this.presentIndex));
           this.currentConfig = currentPlayerConfig.config;
-          this.presentIndex = this.presentIndex + 1;
           this.updateLibEnabler(currentPlayerConfig.id);
           console.log('CurrentIndex:', this.presentIndex);
           console.log('CurrentConfig:', this.currentConfig);
         } else { 
+          this.presentIndex = this.presentIndex - 1;
           const currentPlayerConfig = (this.getObject(this.playerLifeCycle, 'index', this.presentIndex));
           this.currentConfig = currentPlayerConfig.config;
-          this.presentIndex = this.presentIndex - 1;
           this.updateLibEnabler(currentPlayerConfig.id);
           console.log('CurrentIndex:', this.presentIndex);
           console.log('CurrentConfig:', this.currentConfig);
@@ -98,7 +96,7 @@ export class AppComponent implements OnInit {
     } else {
       if(this.presentIndex > this.playerLifeCycle['totalIndex']) {
         this.presentIndex = this.presentIndex - 1;
-      } else if (this.presentIndex <= 0 ){
+      } else if (this.presentIndex <= 1 ){
         this.presentIndex = 1;
       }
       console.log('last content reached');
@@ -231,19 +229,19 @@ initializeJSONConfig() {
         'id': 'startPage',
         'config': {
           'showMessage': true,
-          'message': 'string',
+          'message': 'thermodynamics',
+          'credits': ['HC Verma', 'RS Aggarwal'],
+          'creditsLabel': 'credits',
           'showCredits': true,
-          'credits': [],
-          'creditsLabel': 'string',
-          'showPoweredBy': true,
           'poweredByLabel': 'powered by',
-          'poweredByImageURL': 'string',
+          'poweredByImageURL': 'https://diksha.gov.in/assets/imgs/logos.svg',
+          'showPoweredBy': true,
+          'licenseTerms': 'CC BY 4.0',
+          'licenseTermsLabel': 'license Terms',
           'showlicenseTerms': true,
-          'licenseTerms': 'string',
-          'licenseTermsLabel': 'string',
-          'showCopyRight': true,
-          'copyright': 'string',
-          'copyrightLabel': 'copyright'
+          'copyright': 'CBSE, 2020',
+          'copyrightLabel': 'copyright',
+          'showCopyRight': true
     }
     }
     ],
