@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { navigationConfig , pdfPlayerConfig , startPageDetails, endPageConfig, contentDetails, EndPageData, pdfPlayerConfig2} from './data';
+import { navigationConfig , pdfPlayerConfig , startPageDetails, endPageConfig, contentDetails, EndPageData} from './data';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   pdfMetadataEvents: object;
   navigationConfig = navigationConfig;
   pdfPlayerConfig = pdfPlayerConfig;
-  pdfPlayerConfig2 = pdfPlayerConfig2;
   startPageDetails = startPageDetails;
   endPageConfig = endPageConfig;
   contentDetails = contentDetails;
