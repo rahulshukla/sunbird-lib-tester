@@ -25,6 +25,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/assets/data",
+              "src/assets/images",
+              "src/assets/subs",
+
               {
                 "glob": "**/*",
                 "input": "node_modules/navigation-v2/lib/assets/",
@@ -45,7 +49,8 @@
               "src/styles.scss",
               {
                 "input" : "./node_modules/bootstrap/dist/css/bootstrap.min.css"
-              }
+              },
+              "./node_modules/video-player-v2/node_modules/videogular2/fonts/videogular.css"
             ],
             
             "scripts": [

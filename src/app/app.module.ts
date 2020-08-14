@@ -6,6 +6,7 @@ import { PdfPlayerV2Module } from 'pdf-player-v2';
 import { NavigationV2Module } from 'navigation-v2';
 import { StartPageV2Module } from 'start-page-v2';
 import { EndPageV2Module } from 'endpage-v2';
+import { VideoPlayerV2Module } from 'video-player-v2';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EndPageV2Module } from 'endpage-v2';
     PdfPlayerV2Module,
     NavigationV2Module,
     StartPageV2Module,
-    EndPageV2Module
+    EndPageV2Module,
+    VideoPlayerV2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

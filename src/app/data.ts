@@ -85,6 +85,7 @@ export const pdfEndData = {};
 
 
 export const configuration = {
+  'totalIndex': 6,
   'navigationConfig': {
     'index': 0,
     'config': {
@@ -104,8 +105,8 @@ export const configuration = {
   'startPage': [
     {
       'index': 1,
-      'id': 'startPage1',
-      'config':{
+      'id': 'startPage',
+      'config': {
         'showMessage': true,
         'message': 'thermodynamics',
         'credits': ['HC Verma', 'RS Aggarwal'],
@@ -123,27 +124,27 @@ export const configuration = {
       }
   },
   {
-      'index': 3,
-      'id': 'startPage2',
+      'index': 6,
+      'id': 'startPage',
       'config': {
         'showMessage': true,
-        'message': 'string',
+        'message': 'thermodynamics-2',
+        'credits': ['Rahul Shukla', 'RS Aggarwal'],
+        'creditsLabel': 'credits',
         'showCredits': true,
-        'credits': [],
-        'creditsLabel': 'string',
-        'showPoweredBy': true,
         'poweredByLabel': 'powered by',
-        'poweredByImageURL': 'string',
+        'poweredByImageURL': 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia%27s_W.svg',
+        'showPoweredBy': true,
+        'licenseTerms': 'CC BY 4.0',
+        'licenseTermsLabel': 'license Terms',
         'showlicenseTerms': true,
-        'licenseTerms': 'string',
-        'licenseTermsLabel': 'string',
-        'showCopyRight': true,
-        'copyright': 'string',
-        'copyrightLabel': 'copyright'
+        'copyright': 'CBSE, 2020',
+        'copyrightLabel': 'copyright',
+        'showCopyRight': true
   }
   }
   ],
-  'pdfPlayer':{
+  'pdfPlayer': {
     'index': 2,
     'id': 'pdfPlayer',
     'config': {
@@ -174,7 +175,7 @@ export const configuration = {
   'endPage': [
   {
     'index': 4,
-    'id': 'endPage1',
+    'id': 'endPage',
     'config': {
       'showMessage': true,
       'showContentInfo': true,
@@ -187,9 +188,9 @@ export const configuration = {
   },
   {
     'index': 5,
-    'id': 'endPage2',
+    'id': 'endPage',
     'config': {
-      'showMessage': true,
+      'showMessage': 'test last',
       'showContentInfo': true,
       'showClockIcon': true,
       'showAuthor': true,
@@ -198,8 +199,18 @@ export const configuration = {
       'showUser': true
       }
     }
-  ]
+  ],
+  'video': {
+    'index': 3,
+    'id': 'video'
+  }
 };
 
-
+export const libEnabler = {
+  pdf: false,
+  endPage: false,
+  startPage: false,
+  video : false,
+  navigation: true
+};
 

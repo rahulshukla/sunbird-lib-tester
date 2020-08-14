@@ -30,9 +30,11 @@
     "ngx-slick-carousel": "^0.4.7",
     "pdf-player-v2": "file:../../Documents/MyWorkspace/sunbird-pdf-v2-ng7/dist/pdf-player-v2",
     "rxjs": "~6.3.3",
+    "rxjs-compat": "^6.6.2",
     "slick-carousel": "^1.8.1",
     "start-page-v2": "file:../../Documents/MyWorkspace/startPageDemo/dist/start-page-v2",
     "tslib": "^1.9.0",
+    "video-player-v2": "file:../../Documents/MyWorkspace/sunbird-video-player-v2/dist/video-player-v2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
