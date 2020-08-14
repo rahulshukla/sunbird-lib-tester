@@ -1,10 +1,15 @@
+
 <!-- Controls library  -->
-<sb-start-page [startPageData]="startPageDetails" (startEvents)="startPageEventHandler($event)" *ngIf = "showStartPage" ></sb-start-page>
 
-<sb-navigation-ctrl [navConfig] = "navigationConfig" (sendControls)="navigationHandler($event)" ></sb-navigation-ctrl>
+<sb-start-page [startPageData]="currentConfig" (startEvents)="startPageEventHandler($event)" *ngIf = "libEnabler.startPage" ></sb-start-page>
 
-<sb-lib-endpage [endPageConfig]="endPageConfig" [contentDetails]="contentDetails" [pdfEndData]="pdfEndData" (replayEvent)="replayHandler($event)" (sendMetadata)="EndPageEventHandler($event)" *ngIf = "showEndpage" ></sb-lib-endpage>
+<sb-navigation-ctrl [navConfig] = "navigationConfig" (sendControls)="navigationHandler($event)" *ngIf="libEnabler.navigation" ></sb-navigation-ctrl>
+
+<sb-lib-endpage [endPageConfig]="currentConfig" [contentDetails]="contentDetails" [EndPageData]="EndPageData" (replayEvent)="replayHandler($event)" (sendMetadata)="EndPageEventHandler($event)" *ngIf = "libEnabler.endPage" ></sb-lib-endpage>
 
 <!-- player -->
 
-<sb-pdf-viewer [pdfConfig]="pdfPlayerConfig" [navigation] = "navigate" (sendMetadata)="pdfEventHandler($event)" *ngIf = "showPdf" ></sb-pdf-viewer>
+<sb-pdf-viewer [pdfConfig]="currentConfig" [navigation] = "navigate" (sendMetadata)="pdfEventHandler($event)" *ngIf = "libEnabler.pdf" ></sb-pdf-viewer>
+
+<!-- Video -->
+<sb-video-viewer *ngIf="libEnabler.video"></sb-video-viewer>
